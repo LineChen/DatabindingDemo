@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.linechen.databindingdemo.MainActivity">
+
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="user"
+            type="com.linechen.databindingdemo.bean.User"/>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:text="@{user.userName}"
+            android:background="@color/colorAccent"
+            android:onClick="@{clickListener}"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(user.age)}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.isGirl ? String.valueOf(user.age) : String.valueOf(user.age)}"/>
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:background="#f00"
+            android:visibility="@{user.isGirl ? View.VISIBLE : View.GONE}"
+            />
+
+
+    </LinearLayout>
+
+
+</layout>
