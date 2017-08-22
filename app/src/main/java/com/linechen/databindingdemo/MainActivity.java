@@ -9,7 +9,6 @@ import android.widget.Toast;
 import com.linechen.databindingdemo.bean.User;
 import com.linechen.databindingdemo.databinding.ActivityMainBinding;
 
-
 public class MainActivity extends AppCompatActivity {
 
     @Override

@@ -6,6 +6,7 @@
 
     <data>
         <import type="android.view.View"/>
+        <import type="com.linechen.databindingdemo.StringUtils" alias="MyStringUtils"/>
 
         <variable
             name="user"
@@ -27,7 +28,7 @@
             android:id="@+id/userName"
             android:layout_width="50dp"
             android:layout_height="30dp"
-            android:text="@{user.userName}"
+            android:text="@{StringUtils.concatTail(user.userName)}"
             android:background="@color/colorAccent"
             android:onClick="@{clickListener}"/>
 
